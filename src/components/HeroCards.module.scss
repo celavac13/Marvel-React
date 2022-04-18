@@ -1,0 +1,108 @@
+.position {
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+
+    @media only screen and (max-width: 1090px) {
+        justify-content: space-evenly;
+    }
+}
+
+.heroDiv {
+    margin-top: 80px;
+    display: flex;
+    justify-content: center;
+
+    @media only screen and (max-width: 1090px) {
+        width: 50%;
+    }
+
+    @media only screen and (max-width: 570px) {
+        width: 100%;
+    }
+}
+
+.imageDiv {
+    background-color: #000;
+    z-index: 2;
+}
+
+.image {
+    height: 100%;
+    margin-top: -50px;
+    border-top-right-radius: 100px;
+}
+
+.nameDiv {
+    background-color: #000;
+    width: 145px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-left: -95px;
+}
+
+.heroName {
+    z-index: 3;
+    color: #fff;
+    font-size: 20px;
+    background-color: #000;
+}
+
+.btn {
+    z-index: 3;
+    border: none;
+    background-color: rgb(155, 155, 155);
+    padding: 5px;
+    border-radius: 3px;
+    font-family: inherit;
+    font-size: 20px;
+    font-weight: 700;
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.paginationBtns {
+    position: absolute;
+    top: calc(100% + 50px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    list-style: none;
+
+    li {
+        background-color: #000;
+        color: #fff;
+        font-size: 20px;
+        border-radius: 5px;
+        padding: 4px 0;
+
+        &:hover {
+            cursor: pointer;
+        }
+
+        a {
+            padding: 4px 10px;
+            border-radius: 5px;
+        }
+    }
+
+    li:not(:last-child) {
+        margin-right: 10px;
+    }
+}
+
+.activeBtn a {
+    background-color: red;
+}
+
+.disabledBtn a {
+    color: rgb(117, 116, 116);
+
+    &:hover {
+        cursor: not-allowed;
+    }
+}

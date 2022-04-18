@@ -1,0 +1,16 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Marvel', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  background-image: linear-gradient(to left, rgba(237, 29, 36, 0.9), rgba(0, 0, 0, 0.9)), url('./Marvel_Logo.png');
+  background-size: contain;
+  background-repeat: repeat;
+}

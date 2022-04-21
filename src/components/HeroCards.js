@@ -4,7 +4,7 @@ import ReactPaginate from 'react-paginate';
 
 import classes from "./HeroCards.module.scss";
 
-function HeroCards({ heros }) {
+function HeroCards({ heros, reRender }) {
     const [pageNumber, setPageNumber] = useState(0);
     const [remountComponent, setRemountComponent] = useState(0);
 
@@ -17,6 +17,7 @@ function HeroCards({ heros }) {
         if (localStorage.hasOwnProperty(key)) {
             localStorage.removeItem(key)
             event.target.innerHTML = "Like";
+            reRender(1);
         } else {
             obj.status = true;
             localStorage.setItem(key, JSON.stringify(obj));
@@ -37,11 +38,16 @@ function HeroCards({ heros }) {
             return (
                 <div key={hero.id} className={classes.heroDiv}>
                     <div className={classes.imageDiv}>
-                        <img className={classes.image} src={hero.image}></img>
+                        <img className={classes.image} src={hero.image} alt="hero"></img>
                     </div>
                     <div className={classes.nameDiv}>
                         <p className={classes.heroName}>{hero.name}</p>
-                        <button className={classes.btn} onClick={(event) => likeHandler(hero.id, objLocalStorage, event)}>{hero.status ? "Liked" : "Like"}</button>
+                        <button
+                            className={classes.btn}
+                            onClick={(event) => likeHandler(hero.id, objLocalStorage, event)}
+                        >
+                            {hero.status ? "Liked" : "Like"}
+                        </button>
                     </div>
                 </div>
             );
